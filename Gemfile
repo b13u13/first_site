@@ -7,11 +7,18 @@ group :development do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'guard-rspec'
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 
 end
 
 group :test do
   gem 'selenium-webdriver'
+  gem 'rb-notifu'
+  gem 'wdm'
+
 end
 
 
