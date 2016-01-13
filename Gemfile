@@ -19,6 +19,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'rb-notifu'
   gem 'wdm'
+  gem 'factory_girl_rails'
 
 end
 
