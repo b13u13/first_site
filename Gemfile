@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 gem 'rails', '4.1.8'
 gem 'bootstrap-sass'
-gem 'sqlite3'
+
 
 group :development do
   gem 'rspec-rails'
@@ -13,6 +13,15 @@ group :development do
   gem 'guard-spork'
   gem 'childprocess'
 
+
+end
+
+
+
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'rspec-its'
 end
 
 group :test do
