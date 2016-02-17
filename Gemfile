@@ -9,7 +9,6 @@ gem 'bootstrap-will_paginate'
 
 
 group :development do
-  gem 'rspec-rails'
   gem 'capybara'
   gem 'guard-rspec'
   gem 'spork-rails'
