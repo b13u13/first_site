@@ -5,6 +5,7 @@ before_action :admin_user,     only: :destroy
 
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def index
@@ -53,13 +54,7 @@ before_action :admin_user,     only: :destroy
        params.require(:user).permit(:name, :email, :password, :password_confirmation)
      end
 
-     def signed_in_user
-       unless signed_in?
-         store_location
-         flash[:danger] = "Please sign in"
-         redirect_to signin_url
-       end
-     end
+
 
      def correct_user
        @user = User.find(params[:id])

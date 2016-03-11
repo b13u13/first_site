@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
 
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions,   only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy]
  	root          'static_pages#home'
 
   get    'help'    => 'static_pages#help'
