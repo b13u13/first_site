@@ -10,7 +10,6 @@ gem 'bootstrap-will_paginate'
 
 group :development do
   gem 'capybara'
-  gem 'guard-rspec'
   gem 'spork-rails'
   gem 'guard-spork'
   gem 'childprocess'
