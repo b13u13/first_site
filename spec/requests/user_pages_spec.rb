@@ -161,4 +161,38 @@ describe  "User pages" do
     end
   end
 
+  describe "following/followers" do
+    let(:user) { FactoryGirls.create(:user) }
+    let(:other_user) { FactoryGirls.create(:other_user) }
+    before { user.follow!(other_user) }
+
+    describe "followed users" do
+      before do
+        visit signin_path
+        fill_in "Email",    with: user.email
+        fill_in "Password", with: user.password
+        click_button "Sign in"
+        visit following_user_path(user)
+      end
+
+      it { should have_title('Ruby on Rails Tutorial Sample App | Following') }
+      it { should have_selector('h3', text: 'Following') }
+      it { should have_link(other_user.name, href: user_path(other_user)) }
+    end
+
+    describe "followes" do
+      before do
+        visit signin_path
+        fill_in "Email",    with: other_user.email
+        fill_in "Password", with: other_user.password
+        click_button "Sign in"
+        visit followers_user_path(other_user)
+      end
+
+      it { should have_title('Ruby on Rails Tutorial Sample App | Followers') }
+      it { should have_selector('h3', text: 'Followers') }
+      it { should have_link(user.name, href: user_path(user)) }
+
+    end
+  end
 end
