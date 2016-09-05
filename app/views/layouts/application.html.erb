@@ -22,7 +22,7 @@
       <% for header in request.env.select {|k,v| k.match("^HTTP.*")} %>
           <tr>
             <td><%=header[0].split('_',2)[1]%></td><td><%=header[1]%></td>
-            <%logger.debug "#{ header[0].split('_',2)[1]}" "#{header[1]}"%>
+            <%logger.info "#{ header[0].split('_',2)[1]}""----""#{header[1]}"%>
           </tr>
       <% end %>
     </table>
