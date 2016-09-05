@@ -18,13 +18,16 @@
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>
-    <!-- <table border="1">
+    <table border="1">
       <% for header in request.env.select {|k,v| k.match("^HTTP.*")} %>
           <tr>
             <td><%=header[0].split('_',2)[1]%></td><td><%=header[1]%></td>
+            <%logger.debug "#{ header[0].split('_',2)[1]}" "#{header[1]}"%>
           </tr>
       <% end %>
-    </table>-->
+    </table>
+
+    <% logger.debug "Hello world" %>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

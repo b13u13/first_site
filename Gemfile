@@ -10,7 +10,6 @@ gem 'bootstrap-will_paginate'
 
 group :development do
   gem 'capybara'
-  gem 'spork-rails'
   gem 'guard-spork'
   gem 'childprocess'
 end
@@ -26,7 +25,6 @@ end
 group :test do
   gem 'selenium-webdriver'
   gem 'rb-notifu'
-  gem 'wdm'
   gem 'factory_girl_rails'
 
 end
